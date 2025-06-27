@@ -1,213 +1,218 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Product</title>
-    <style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add Product</title>
+        <style>
         * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f0f8;
-      min-height: 100vh;
-      display: flex;
-    flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f0f8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
 
-    .wrapper {
-      width: 100%;
-      max-width: 800px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        .wrapper {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    h2 {
-      color: #5f2c82;
-      margin-bottom: 16px;
-    }
+        h2 {
+            color: #5f2c82;
+            margin-bottom: 16px;
+        }
 
-    form {
-      background-color: #fff;
-      padding: 24px 32px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 500px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 40px;
-    }
+        form {
+            background-color: #fff;
+            padding: 24px 32px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
 
-    label {
-      font-size: 16px;
-      color: #444;
-    }
+        label {
+            font-size: 16px;
+            color: #444;
+        }
 
-    input[type="text"],
-    input[type="number"] {
-      padding: 10px 14px;
-      font-size: 16px;
-      border: 2px solid #ccc;
-      border-radius: 6px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
+        input[type="text"],
+        input[type="number"] {
+            padding: 10px 14px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
 
-    input:focus {
-      border-color: #9b59b6;
-    }
+        input:focus {
+            border-color: #9b59b6;
+        }
 
-    button {
-      background-color: #8e44ad;
-      color: white;
-      padding: 12px 16px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+        button {
+            background-color: #8e44ad;
+            color: white;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-    button:hover {
-      background-color: #732d91;
-    }
+        button:hover {
+            background-color: #732d91;
+        }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
 
-    th, td {
-      padding: 14px 16px;
-      text-align: left;
-      border-bottom: 1px solid #eee;
-    }
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
 
-    th {
-      background-color: #f3eafc;
-      color: #5f2c82;
-      font-weight: 600;
+        th {
+            background-color: #f3eafc;
+            color: #5f2c82;
+            font-weight: 600;
             text-align: center;
-    }
+        }
 
-    tbody tr:hover {
-      background-color: #faf5ff;
-    }    </style>
-  </head>
-  <body>
-    <h2>Add Product:</h2>
+        tbody tr:hover {
+            background-color: #faf5ff;
+        }    </style>
+    </head>
+    <body>
+        <h2>Add Product:</h2>
 
-    <form id="productForm">
-      <label for="productCode">Product Code:</label>
-      <input type="text" id="productCode" required />
+        <form id="productForm">
+            <label for="productCode">Product Code:</label>
+            <input type="text" id="productCode" required />
 
-      <label for="price">Price:</label>
-      <input type="number" id="price" required />
+            <label for="price">Price:</label>
+            <input type="number" id="price" required />
 
-      <button type="button" onclick="addProduct()">Add Product</button>
-    </form>
+            <button type="button" onclick="addProduct()">Add Product</button>
+        </form>
 
-    <h2>Product List:</h2>
+        <h2>Product List:</h2>
 
-    <table id="productTable">
-      <thead>
-        <tr>
-          <th>Product Code</th>
-          <th>Price</th>
-          <th>Created At</th>
-        </tr>
-      </thead>
-      <tbody id="productTableBody"></tbody>
-    </table>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Product Code</th>
+                    <th>Price</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody"></tbody>
+        </table>
 
-    <script>
-    const FETCHPRODUCTS_API_GATEWAY = ""
-    const ADDPRODUCT_API_GATEWAY = ""
+        <script>
 
-      document.addEventListener("DOMContentLoaded", fetchProducts);
+        // NOTE: example below
+        // e.g  API_ENDPOINT = "http://aws.sucks.dev/"
+        //      FETCHPRODUCTS_API_ENDPOINT = `${API_ENDPOINT}/your-endpoint`
+        const API_ENDPOINT = ""
+        const FETCHPRODUCTS_API_ENDPOINT = `${API_ENDPOINT}/<fetch-product-endopoint-here>`
+        const ADDPRODUCT_API_ENDPOINT = `${API_ENDPOINT}/<add-product-endopoint-here>`
 
-      function addProduct() {
-        let productCode = document.getElementById("productCode").value;
-        let price = document.getElementById("price").value;
+        document.addEventListener("DOMContentLoaded", fetchProducts);
 
-        let data = {
-          operation: "addProduct",
-          productCode: productCode,
-          price: price,
-        };
+        function addProduct() {
+            let productCode = document.getElementById("productCode").value;
+            let price = document.getElementById("price").value;
 
-        fetch(ADDPRODUCT_API_GATEWAY, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        })
-          .then((response) => response.json())
-          .then((result) => {
-            alert(JSON.parse(result.body));
+            let data = {
+                operation: "addProduct",
+                productCode: productCode,
+                price: price,
+            };
 
-            // Clear form fields
-            document.getElementById("productCode").value = "";
-            document.getElementById("price").value = "";
-          })
-          .catch((error) => {
-            console.error("Error adding product:", error);
-          });
-      }
+            fetch(ADDPRODUCT_API_ENDPOINT, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            })
+                .then((response) => response.json())
+                .then((result) => {
+                    alert(JSON.parse(result.body));
 
-      function fetchProducts() {
-        let requestData = {
-          operation: "listProducts",
-        };
+                    // Clear form fields
+                    document.getElementById("productCode").value = "";
+                    document.getElementById("price").value = "";
+                })
+                .catch((error) => {
+                    console.error("Error adding product:", error);
+                });
+        }
 
-        fetch(FETCHPRODUCTS_API_GATEWAY, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestData),
-        })
-          .then((response) => response.json())
-          .then((responseData) => {
-            const products = JSON.parse(responseData.body);
+        function fetchProducts() {
+            let requestData = {
+                operation: "listProducts",
+            };
 
-            // Update product table
-            products.forEach((product) => {
-              updateProductTable(product);
-            });
-          })
-          .catch((error) => {
-            console.error("Error fetching products:", error);
-          });
-      }
+            fetch(FETCHPRODUCTS_API_ENDPOINT, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(requestData),
+            })
+                .then((response) => response.json())
+                .then((responseData) => {
+                    const products = JSON.parse(responseData.body);
 
-      function updateProductTable(product) {
-        let tableBody = document.getElementById("productTableBody");
-        let row = tableBody.insertRow();
+                    // Update product table
+                    products.forEach((product) => {
+                        updateProductTable(product);
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error fetching products:", error);
+                });
+        }
 
-        let cell1 = row.insertCell(0);
-        let cell2 = row.insertCell(1);
-        let cell3 = row.insertCell(2);
+        function updateProductTable(product) {
+            let tableBody = document.getElementById("productTableBody");
+            let row = tableBody.insertRow();
 
-        cell1.textContent = product.productCode;
-        cell2.textContent = product.price;
-        cell3.textContent = product.createdAt;
-      }
-    </script>
-  </body>
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+
+            cell1.textContent = product.productCode;
+            cell2.textContent = product.price;
+            cell3.textContent = product.createdAt;
+        }
+        </script>
+    </body>
 </html>
