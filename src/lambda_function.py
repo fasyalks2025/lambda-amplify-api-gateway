@@ -3,9 +3,12 @@ import boto3
 import time
 from extra_type import DynamoDBTableLike, Operations
 
+
+
 def lambda_handler(event: dict, ctx):
     dynamodb = boto3.resource("dynamodb")
-    product_table = dynamodb.Table('Product')
+    # need to ignore this since AWS SDK is so ass, an unpaid intern probably wrote it
+    product_table = dynamodb.Table('Product') # type: ignore 
 
     try:
         # Remove whitespace from event json to make this function idiot-proof

@@ -1,5 +1,7 @@
 from typing import List, Protocol
 
+
+
 # list of operation available
 class Operations:
     addProduct = 'addProduct'
